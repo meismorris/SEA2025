@@ -199,3 +199,212 @@ body {
   height: 30px;
   margin: 10px auto;
 }
+
+.carousel .companies{
+  display: flex;
+  justify-content: space-evenly;
+
+  margin: 50px;
+  /* height:84px;
+  width: 32px; */
+}
+
+.info-section {
+  display: flex;
+  justify-content: space-between;
+  margin: 10% 0;
+}
+
+.info-text {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  justify-content: center;
+}
+
+.info-section .info-text h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  
+}
+.info-section .info-text p {
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  margin: 3% 0;
+}
+
+.gallery-button {
+  font-family: 'Instrument Sans', sans-serif;
+  font-weight: 600;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  width: 200px;
+  border-radius: 220px;
+}
+
+.gallery-button:hover {
+  background-color: #f0f0f0; /* Optional: Change color on hover */
+}
+        
+.aquarium-container {
+  font-family: 'Inter', sans-serif;
+  max-width: 100%;
+  margin: 5% 0;
+  /* padding: 0 64px; */
+}
+
+.aquarium-heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.aquarium-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.aquarium-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  width: calc(33.33% - 14px);
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 262px; /* Set exact height to match original image */
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0;
+}
+
+.text-container h2 {
+  margin: 3% 0;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Change from cover to contain to preserve aspect ratio */
+  background-color: #f0f0f0; /* Light background for images that don't fill container */
+}
+
+/* For larger screens, constrain width to match original image width */
+@media (min-width: 1240px) {
+  .aquarium-card {
+      width: 412px; /* Exact width of original image */
+      margin-right: 20px;
+  }
+  
+  .aquarium-grid {
+      justify-content: space-between;
+  }
+}
+
+.magnify-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.magnify-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.magnify-button svg {
+  width: 24px;
+  height: 24px;
+  stroke: #333;
+}
+
+.bottom-feature {
+  width: 100%;
+  margin: 5% 0;
+  display: flex;
+  justify-content: center;
+}
+
+.feature-image-container {
+  position: relative;
+  width: calc(100% - 128px); /* Adjust to match the content area */
+  max-width: 1600px; /* Prevent excessive stretching on very wide screens */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.feature-image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.discover-more-link {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+}
+
+.discover-more-link:hover {
+  transform: translateX(5px);
+}
+
+.arrow-icon {
+  margin-left: 10px;
+  font-size: 52px;
+}
+
+@media (max-width: 768px) {
+  .feature-image-container {
+    width: calc(100% - 60px); /* Adjust margins for mobile */
+  }
+  
+  .discover-more-link {
+    font-size: 32px;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .arrow-icon {
+    font-size: 36px;
+  }
+}
