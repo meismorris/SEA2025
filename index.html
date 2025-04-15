@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Architectural Wonders of Aquariums</title>
+  <script src="https://cdn.jsdelivr.net/npm/motion@10.16.2/dist/motion.min.js"></script>
+  <script type="module" src="effects.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,wght@0,400;0,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -13,20 +15,7 @@
   <div class="hero-container">
     <img src="LandingImages/HeroImage.png" alt="Modern aquarium building" class="hero-image">
     
-    <div class="navbar">
-      <div class="logo-container">
-        <img src="Logos/SCLogo.png" alt="Snapchat Logo" class="logo">
-        <span class="logo-text">SEA</span>
-      </div>
-      
-      <div class="nav-links-container">
-        <div class="nav-links">
-          <a href="#" class="active">Home</a>
-          <a href="#">Gallery</a>
-          <a href="#">Process</a>
-          <a href="#">Credits</a>
-        </div>
-      </div>
+
       
       <div class="empty-space"></div>
     </div>
@@ -43,14 +32,32 @@
     </a>
   </div>
 
-  <div class="carousel">
-      <div class="companies">
-        <img src="Logos/AOPLogo.png">
-        <img src="Logos/NADLogo.png">
-        <img src="Logos/NELogo.png">
-        <img src="Logos/OcenoLogo.png">
-      </div>
+  <div class="logo-marquee">
+    <div class="logo-track">
+      <img src="Logos/AOPLogo.png" alt="AOP Logo">
+      <img src="Logos/NADLogo.png" alt="NAD Logo">
+      <img src="Logos/NELogo.png" alt="NE Logo">
+      <img src="Logos/OcenoLogo.png" alt="Oceno Logo">
+  
+      <!-- Duplicate for seamless loop -->
+      <img src="Logos/AOPLogo.png" alt="AOP Logo">
+      <img src="Logos/NADLogo.png" alt="NAD Logo">
+      <img src="Logos/NELogo.png" alt="NE Logo">
+      <img src="Logos/OcenoLogo.png" alt="Oceno Logo">
+
+      <img src="Logos/AOPLogo.png" alt="AOP Logo">
+      <img src="Logos/NADLogo.png" alt="NAD Logo">
+      <img src="Logos/NELogo.png" alt="NE Logo">
+      <img src="Logos/OcenoLogo.png" alt="Oceno Logo">
+
+      <img src="Logos/AOPLogo.png" alt="AOP Logo">
+      <img src="Logos/NADLogo.png" alt="NAD Logo">
+      <img src="Logos/NELogo.png" alt="NE Logo">
+      <img src="Logos/OcenoLogo.png" alt="Oceno Logo">
+    </div>
   </div>
+  
+  
 
   <div class="info-section">
 
@@ -59,7 +66,7 @@
       <p>Explore a collection of aquariums known for their unique and innovative architectural designs. 
         Each structure combines functionality and beauty, offering a breathtaking 
         experience that celebrates both marine life and modern design.</p>
-      <button class="gallery-button">Display All</button>
+      <a href="gallery.html"><button class="gallery-button">Display All</button></a>
     </div>
 
     <div class="info-img">
@@ -135,6 +142,6 @@
 </div>
 
 
-
+<script type="module" src="effects.js"></script>
 </body>
 </html>

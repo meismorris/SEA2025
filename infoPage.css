@@ -1,0 +1,243 @@
+/* Navbar Styles */
+.navbar {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 90%;
+  padding: 30px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-left: 5%;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: white;
+  font-size: 24px;
+  margin-left: 10px;
+}
+
+.nav-links-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-links {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 10px 20px;
+}
+
+.nav-links a {
+  font-family: 'Instrument Sans', sans-serif;
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+.nav-links a.active {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+}
+
+.empty-space {
+  width: 120px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 94%;
+  max-width: 94%;
+  padding: 0;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1400/735;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-top: 3%;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* Stats Section */
+.stats {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  color: white;
+}
+
+.stat {
+  text-align: center;
+  margin: 0 30px;
+}
+
+.stat-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.stat-value {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Content Section */
+.content {
+  display: flex;
+  margin: 4% 0;
+  gap: 4%;
+  padding: 0;
+  justify-content: space-between;
+}
+
+.content-left {
+  flex: 1;
+  max-width: 48%;
+}
+
+.content-right {
+  flex: 1;
+  max-width: 48%;
+}
+
+.content-left h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.content p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+/* Gallery Section */
+.gallery-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 5% 0 3%;
+  padding: 0;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4%;
+  margin-bottom: 5%;
+  padding: 0;
+}
+
+.gallery-item {
+  height: 0;
+  padding-bottom: 66.67%; /* Maintains a 3:2 aspect ratio */
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .content {
+      flex-direction: column;
+  }
+  
+  .stats {
+      flex-wrap: wrap;
+  }
+  
+  .gallery {
+      grid-template-columns: 1fr;
+  }
+}
