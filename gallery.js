@@ -3,27 +3,27 @@ const searchInput = document.getElementById('searchInput');
 const filterButtons = document.querySelectorAll('.filter-btn');
 const sortSelect = document.getElementById('sortSelect');
 
-let filter = 'all';
-let sort = 'default';
-let search = '';
+let currentFilter = 'all';
+let currentSort = 'default';
+let searchTerm = '';
 
 document.addEventListener('DOMContentLoaded', () => {
   searchInput.addEventListener('input', () => {
-    search = searchInput.value.toLowerCase();
+    searchTerm = searchInput.value.toLowerCase();
     renderGallery();
   });
 
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
       filterButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      filter = btn.dataset.filter;
+      button.classList.add('active');
+      currentFilter = button.dataset.filter;
       renderGallery();
     });
   });
 
   sortSelect.addEventListener('change', () => {
-    sort = sortSelect.value;
+    currentSort = sortSelect.value;
     renderGallery();
   });
 
@@ -34,18 +34,25 @@ function renderGallery() {
   galleryGrid.innerHTML = '';
 
   let items = aquariumData.filter(item => {
-    const name = item.name.toLowerCase();
-    const location = item.location.toLowerCase();
-    const matchesSearch = name.includes(search) || location.includes(search);
-    const matchesFilter = filter === 'all' || item.region.includes(filter);
-    const isFavOK = sort !== 'favorites' || item.isFavorite;
-    return matchesSearch && matchesFilter && isFavOK;
+    const nameMatch = item.name.toLowerCase().includes(searchTerm);
+    const locationMatch = item.location.toLowerCase().includes(searchTerm);
+    const matchesSearch = nameMatch || locationMatch;
+
+    const matchesRegion = currentFilter === 'all' || item.region.includes(currentFilter);
+    const isIncludedByFavorites = currentSort !== 'favorites' || item.isFavorite;
+
+    return matchesSearch && matchesRegion && isIncludedByFavorites;
   });
 
-  if (sort === 'nearest') items.sort((a, b) => a.distance - b.distance);
-  if (sort === 'newest') items.sort((a, b) => b.year - a.year);
-  if (sort === 'oldest') items.sort((a, b) => a.year - b.year);
-  if (sort === 'default') items.sort((a, b) => a.id - b.id);
+  if (currentSort === 'nearest') {
+    items.sort((a, b) => a.distance - b.distance);
+  } else if (currentSort === 'newest') {
+    items.sort((a, b) => b.year - a.year);
+  } else if (currentSort === 'oldest') {
+    items.sort((a, b) => a.year - b.year);
+  } else {
+    items.sort((a, b) => a.id - b.id);
+  }
 
   const links = {
     "Antalya Aquarium": "aboutAntalya.html",
@@ -59,13 +66,13 @@ function renderGallery() {
   };
 
   items.forEach(item => {
-    const div = document.createElement('div');
-    div.className = 'gallery-item';
+    const card = document.createElement('div');
+    card.className = 'gallery-item';
 
-    const link = links[item.name] || '#';
+    const page = links[item.name] || '#';
 
-    div.innerHTML = `
-      <a href="${link}" class="gallery-item-link">
+    card.innerHTML = `
+      <a href="${page}" class="gallery-item-link">
         <img src="${item.image}" alt="${item.name}">
         <div class="gallery-item-info">
           <div class="gallery-item-title">${item.name}</div>
@@ -77,19 +84,21 @@ function renderGallery() {
       </button>
     `;
 
-    galleryGrid.appendChild(div);
+    galleryGrid.appendChild(card);
   });
 
-  document.querySelectorAll('.favorite-btn').forEach(btn => {
-    btn.addEventListener('click', e => {
+  document.querySelectorAll('.favorite-btn').forEach(button => {
+    button.addEventListener('click', e => {
       e.preventDefault();
       e.stopPropagation();
-      const id = parseInt(btn.dataset.id);
-      const aquarium = aquariumData.find(a => a.id === id);
-      if (aquarium) {
-        aquarium.isFavorite = !aquarium.isFavorite;
-        btn.classList.toggle('active');
-        if (sort === 'favorites') renderGallery();
+
+      const id = parseInt(button.dataset.id);
+      const selected = aquariumData.find(a => a.id === id);
+
+      if (selected) {
+        selected.isFavorite = !selected.isFavorite;
+        button.classList.toggle('active');
+        if (currentSort === 'favorites') renderGallery();
       }
     });
   });
