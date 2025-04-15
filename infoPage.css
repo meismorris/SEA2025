@@ -1,4 +1,11 @@
-/* Navbar Styles */
+/* nav bar tab */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  
+}
 .navbar {
   position: absolute;
   top: 40px;
@@ -62,11 +69,6 @@
   width: 120px;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 body {
   font-family: 'Inter', sans-serif;
