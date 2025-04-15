@@ -16,6 +16,23 @@
     <img src="LandingImages/HeroImage.png" alt="Modern aquarium building" class="hero-image">
     
 
+    <div class="hero-section">
+      <div class="navbar">
+        <div class="logo-container">
+          <img src="Logos/SCLogo.png" alt="Snapchat Logo" class="logo">
+          <span class="logo-text">SEA</span>
+        </div>
+        
+        <div class="nav-links-container">
+          <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="#">Process</a>
+            <a href="#">Credits</a>
+          </div>
+        </div>
+        <div class="empty-space"></div>
+      </div>
       
       <div class="empty-space"></div>
     </div>
@@ -24,7 +41,7 @@
       <h1 class="hero-title">Architectural Wonders of Aquariums</h1>
     </div>
     
-    <a href="#" class="discover-btn">
+    <a href="#target" class="discover-btn">
       DISCOVER
       <svg class="arrow-down" viewBox="0 0 24 24" width="24" height="24">
         <path d="M7 10l5 5 5-5" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
@@ -61,7 +78,7 @@
 
   <div class="info-section">
 
-    <div class="info-text">
+    <div class="info-text" id ="target">
       <h1>Explore aquariums with stunning design with marine life.</h1>
       <p>Explore a collection of aquariums known for their unique and innovative architectural designs. 
         Each structure combines functionality and beauty, offering a breathtaking 
@@ -74,20 +91,23 @@
     </div>
   </div>
 
+  <div class="aquarium-section-container">
+
   <div class="aquarium-container">
     <h1 class="aquarium-heading">Notable Aquariums in the US</h1>
-    
     <div class="aquarium-grid">
        <!-- Aquarium of the Pacific -->
     <div class="aquarium-card">
       <div class="image-container">
           <img src="landingImages/AOTP2.png" alt="Aquarium of the Pacific">
-          <button class="magnify-button">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-          </button>
+          <a href="aboutPacific.html">
+            <button class="magnify-button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+          </a>
       </div>
       <div class="text-container">
           <h2>Aquarium of the Pacific</h2>
@@ -98,13 +118,16 @@
   <!-- National Aquarium -->
   <div class="aquarium-card">
       <div class="image-container">
+          
           <img src="landingImages/NA2.png" alt="National Aquarium">
-          <button class="magnify-button">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-          </button>
+          <a href="aboutNational.html"></a>
+            <button class="magnify-button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+          </a>
       </div>
       <div class="text-container">
           <h2>National Aquarium</h2>
@@ -116,12 +139,14 @@
   <div class="aquarium-card">
       <div class="image-container">
           <img src="landingImages/MBA2.png" alt="Monterey Bay Aquarium">
-          <button class="magnify-button">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-          </button>
+          <a href="aboutMonterey.html">
+            <button class="magnify-button">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+          </a>
       </div>
       <div class="text-container">
           <h2>Monterey Bay Aquarium</h2>
@@ -131,15 +156,18 @@
 </div>
 </div>
 
+</div>
+
 <!-- Bottom Feature Section -->
 <div class="bottom-feature">
   <div class="feature-image-container">
-    <img src="landingImages/footerImage.png" alt="Modern aquarium architecture at night">
+    <img src="landingImages/footerImage2.png" alt="Modern aquarium architecture at night">
     <a href="feature-details.html" class="discover-more-link">
       Discover More <span class="arrow-icon">›</span>
     </a>
   </div>
 </div>
+
 
 
 <script type="module" src="effects.js"></script>

@@ -61,11 +61,12 @@
 }
 
 
-/* Reset styles */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -138,7 +139,7 @@ body {
     display: flex;
     background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
-    border-radius: 30px;
+    border-radius: 20px;
     padding: 10px 20px;
   }
 
@@ -153,7 +154,7 @@ body {
 
   .nav-links a.active {
     background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 15px;
+    border-radius: 10px;
   }
 
   .empty-space {
@@ -250,10 +251,14 @@ body {
 }
 
 .info-section .info-text h1 {
+  background: linear-gradient(to right, #4A90B6 0%, #78D0FF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; 
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 36px;
-  
 }
 .info-section .info-text p {
   font-family: "Instrument Sans", sans-serif;
@@ -265,9 +270,9 @@ body {
 .gallery-button {
   font-family: 'Instrument Sans', sans-serif;
   font-weight: 600;
-  background-color: white;
-  border: 1px solid black;
-  color: black;
+  background-color: #4A90B6;
+  border: 1px transparent;
+  color: white;
   padding: 10px 20px;
   font-size: 14px;
   cursor: pointer;
@@ -276,7 +281,7 @@ body {
 }
 
 .gallery-button:hover {
-  background-color: #f0f0f0; /* Optional: Change color on hover */
+  background-color: #7999ef; /* Optional: Change color on hover */
 }
         
 .aquarium-container {
@@ -286,7 +291,19 @@ body {
   /* padding: 0 64px; */
 }
 
+.aquarium-section-container {
+  background-color: #F1F1F3; /* Light gray background matching your image */
+  border-radius: 10px;
+  padding: 40px;
+  margin: 5% 0;
+}
+
 .aquarium-heading {
+  background: linear-gradient(to left, #4A90B6 0%, #78D0FF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; 
   font-family: 'Poppins', sans-serif;
   font-size: 36px;
   font-weight: 700;
@@ -317,6 +334,8 @@ body {
 }
 
 .text-container {
+  font-family: 'Poppins', sans-serif;
+  font-weight:400;
   display: flex;
   flex-direction: column;
   padding: 15px 0;
@@ -374,19 +393,22 @@ body {
   stroke: #333;
 }
 
+/* Updated bottom-feature section */
 .bottom-feature {
   width: 100%;
   margin: 5% 0;
+  padding: 0 10px; /* Reduced padding from 20px to 10px */
   display: flex;
   justify-content: center;
 }
 
 .feature-image-container {
   position: relative;
-  width: calc(100% - 128px); /* Adjust to match the content area */
-  max-width: 1600px; /* Prevent excessive stretching on very wide screens */
+  width: 100%; /* Full width within the container */
+  max-width: calc(100% + 20px); /* Allow it to be slightly wider than parent */
   border-radius: 10px;
   overflow: hidden;
+  margin: 0 -10px; /* Negative margin to extend beyond parent container */
 }
 
 .feature-image-container img {
