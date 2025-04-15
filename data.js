@@ -1,4 +1,3 @@
-// Array of all aquarium data
 const aquariumData = [
     {
       id: 1,
