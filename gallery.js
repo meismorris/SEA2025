@@ -42,6 +42,11 @@ function renderGallery() {
 // Filter items based on search text and selected region
 function filterItems() {
   return aquariumData.filter(function(item) {
+    // If 'favorites' sort is selected, only show favorited items
+    if (currentSort === 'favorites' && !item.isFavorite) {
+      return false;
+    }
+    
     // Check if item matches search text
     const nameMatch = item.name.toLowerCase().includes(currentSearch.toLowerCase());
     const locationMatch = item.location.toLowerCase().includes(currentSearch.toLowerCase());
@@ -66,9 +71,9 @@ function sortItems(items) {
   } 
   else if (currentSort === 'favorites') {
     // Sort by favorite status (favorites first)
-    return items.sort(function(a, b) {
-      return (b.isFavorite ? 1 : 0) - (a.isFavorite ? 1 : 0);
-    });
+    // When using 'favorites' as sort, we've already filtered to show only favorites
+    // So we can just return items as they are or sort them by another criteria
+    return items; // Or apply another sort within favorites
   } 
   else if (currentSort === 'newest') {
     // Sort by year (newest first)
@@ -90,7 +95,6 @@ function sortItems(items) {
   }
 }
 
-// Create and display the HTML for each gallery item
 // Create and display the HTML for each gallery item
 function displayItems(items) {
     items.forEach(function(item) {
@@ -136,10 +140,9 @@ function displayItems(items) {
       // Add the item to the gallery
       galleryGrid.appendChild(galleryItem);
     });
-  }
+}
 
 // Set up the favorite button click handlers
-
 function setupFavoriteButtons() {
     const favoriteButtons = document.querySelectorAll('.favorite-btn');
     
@@ -165,7 +168,7 @@ function setupFavoriteButtons() {
         }
       });
     });
-  }
+}
 
 // Set up the search box
 function setupSearchBox() {

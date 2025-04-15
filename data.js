@@ -6,7 +6,7 @@ const aquariumData = [
       location: "Long Beach, California",
       region: "california america",
       image: "Gallery Photos/LA.png",
-      distance: 30, // in miles
+      distance: 30,
       year: 1998,
       isFavorite: false
     },
@@ -16,7 +16,7 @@ const aquariumData = [
       location: "Monterey, California",
       region: "california america",
       image: "Gallery Photos/Monterey Bay.png",
-      distance: 325, // in miles
+      distance: 325,
       year: 1984,
       isFavorite: false
     },
@@ -26,7 +26,7 @@ const aquariumData = [
       location: "Boston, Massachusetts",
       region: "america",
       image: "Gallery Photos/New England.png",
-      distance: 2600, // in miles
+      distance: 2600,
       year: 1969,
       isFavorite: false
     },
@@ -36,7 +36,7 @@ const aquariumData = [
       location: "Baltimore, Maryland",
       region: "america",
       image: "Gallery Photos/National American.png",
-      distance: 2700, // in miles
+      distance: 2700,
       year: 1981,
       isFavorite: false
     },
@@ -46,7 +46,7 @@ const aquariumData = [
       location: "Cheshire, England",
       region: "europe",
       image: "Gallery Photos/Blue Planet.png",
-      distance: 5400, // in miles
+      distance: 5400,
       year: 2007,
       isFavorite: false
     },
@@ -56,7 +56,7 @@ const aquariumData = [
       location: "Lausanne, Switzerland",
       region: "europe",
       image: "Gallery Photos/Aquatis.png",
-      distance: 6100, // in miles
+      distance: 6100,
       year: 2017,
       isFavorite: false
     },
@@ -66,7 +66,7 @@ const aquariumData = [
       location: "Valencia, Spain",
       region: "europe",
       image: "Gallery Photos/Oceanografic.png",
-      distance: 6200, // in miles
+      distance: 6200,
       year: 2003,
       isFavorite: false
     },
@@ -76,7 +76,7 @@ const aquariumData = [
       location: "Antalya, Turkey",
       region: "asia",
       image: "Gallery Photos/Antalya Aquarium.png",
-      distance: 7000, // in miles
+      distance: 7000, 
       year: 2012,
       isFavorite: false
     }
